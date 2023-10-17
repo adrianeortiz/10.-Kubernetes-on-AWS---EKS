@@ -40,7 +40,7 @@ eksctl get fargateprofile --cluster my-cluster
 - All the k8s manifest files for the exercise are in "k8s-deployment" folder, so:
 ```sh
 # clone this repository locally
-git clone git@gitlab.com:devops-bootcamp3/bootcamp-java-mysql.git
+git clone https://gitlab.com/twn-devops-bootcamp/latest/11-eks/eks-exercises.git
 
 # check out the solutions branch
 git checkout feature/solutions
@@ -64,7 +64,7 @@ kubectl apply -f db-secret.yaml
 kubectl apply -f phpmyadmin.yaml
 
 # access phpmyadmin and login to mysql db
-kubectl port forward svc/phpmyadmin-service 8081:8081
+kubectl port-forward svc/phpmyadmin-service 8081:8081
 
 # access in browser on
 localhost:8081
@@ -124,7 +124,7 @@ kubectl apply -f java-app.yaml -n my-app
 At this point, you already have an EKS cluster, where: 
 - Mysql chart is deployed and phpmyadmin is running too
 - my-app namespace was created
-- db-config and db-secret were created in the my-app namspace for the java-app
+- db-config and db-secret were created in the my-app namespace for the java-app
 - my-registry-key secret was created to fetch image from docker-hub
 - your java app is also running 
 
@@ -141,7 +141,6 @@ kubectl create secret -n my-app docker-registry my-ecr-registry-key \
 --docker-server=$DOCKER_REGISTRY_SERVER \
 --docker-username=$DOCKER_USER \
 --docker-password=$DOCKER_PASSWORD
-
 
 # SSH into server where Jenkins container is running
 ssh -i {private-key-path} {user}@{public-ip}
