@@ -1,4 +1,2 @@
-#### This project is for the Devops Bootcamp Exercise for 
-#### "Container Orchestration with Kubernetes" 
-
-
+#### This project is for the Devops Bootcamp Exercise for:
+#### "Kubernetes on AWS - EKS" 
